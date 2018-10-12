@@ -20,6 +20,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'valloric/youcompleteme'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-multiple-cursors'
 
 " COLORSCHEMES
 Plugin 'altercation/vim-colors-solarized'
@@ -48,6 +50,11 @@ let mapleader = ','
 " colorscheme dracula
 syntax on
 set nu
+set nowrap
+set incsearch
+set ignorecase
+set smartcase
+" set hlsearch
 set termguicolors
 set encoding=utf-8
 set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h14
