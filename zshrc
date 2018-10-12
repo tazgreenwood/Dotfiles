@@ -3,6 +3,7 @@
 
 # MySQL Path
 export PATH=${PATH}:/usr/local/Cellar/mysql@5.6/5.6.40/bin
+export PATH=${PATH}:/usr/local/Cellar/node/10.9.0/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/taz.greenwood/.oh-my-zsh
