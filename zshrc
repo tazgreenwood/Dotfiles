@@ -4,6 +4,7 @@
 # MySQL Path
 export PATH=${PATH}:/usr/local/Cellar/mysql@5.6/5.6.40/bin
 export PATH=${PATH}:/usr/local/Cellar/node/10.9.0/bin
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/taz.greenwood/.oh-my-zsh
@@ -11,7 +12,7 @@ export ZSH=/Users/taz.greenwood/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="dracula"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -65,7 +66,7 @@ ZSH_THEME="dracula"
 plugins=(
   git
   z
-  vi-mode
+  osx
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,3 +108,7 @@ bfire() {
 lsg() {
 	ls | grep $1
 }
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+alias emacs="emacs -nw"

@@ -22,6 +22,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'valloric/youcompleteme'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/nerdtree'
 
 " COLORSCHEMES
 Plugin 'altercation/vim-colors-solarized'
@@ -46,33 +47,42 @@ filetype plugin indent on    " required
 " Map leader
 let mapleader = ','
 
-" UI configs
+" UI VIM configs
 " colorscheme dracula
 syntax on
-set nu
+set number
 set nowrap
+set cursorline
 set incsearch
+set hlsearch
+nnoremap <esc> :noh<return><esc>
 set ignorecase
 set smartcase
-" set hlsearch
 set termguicolors
 set encoding=utf-8
 set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h14
-
+"
 " TAB configs
-set tabstop=4
-set softtabstop=0 noexpandtab
+" set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+set smarttab
 
 " netrw configs
 let g:netrw_liststyle = 3
-" let g:netrw_banner = 0
+let g:netrw_banner = 0
 " let g:netrw_winsize = 20
-nnoremap <silent> <Leader>e :Explore<CR>
-nnoremap <silent> <Leader>sv :Vexplore<CR>
-nnoremap <silent> <Leader>sh :Hexplore<CR>
+" nnoremap <silent> <Leader>e :Explore<CR>
+" nnoremap <silent> <Leader>sv :Vexplore<CR>
+" nnoremap <silent> <Leader>sh :Hexplore<CR>
+
+" NERDTREE configs
+" autocmd vimenter * NERDTree
+nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
+" nnoremap <silent> <Leader>sh :Hexplore<CR>
+" nnoremap <silent> <Leader>sh :Hexplore<CR>
 
 " tcomment mappings
 " Leader C is the prefix for code related mappîngs
@@ -123,5 +133,14 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-color dracula
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-T> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+color zerodark 
 
